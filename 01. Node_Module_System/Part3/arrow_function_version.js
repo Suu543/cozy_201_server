@@ -1,0 +1,27 @@
+// HTTP Module이 요청을 받으면 Event를 발생시킨다.
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+
+// EventEmitter is a class
+
+// 순서 중요
+// Register a listener
+emitter.on("messageLogged", (arg) => {
+  // e, eventArg ...
+  console.log("Listener called", arg);
+});
+
+// Raise an Event - Making a noise, produce - signalling
+emitter.emit("messageLogged", {
+  id: 1,
+  url: "https://www.google.com",
+});
+
+// Raise: logging (data: message)
+emitter.on("logging", (args) => {
+  console.log("events", args);
+});
+
+emitter.emit("logging", {
+  message: "Hello World",
+});
