@@ -243,3 +243,5 @@ module.exports.one = 1;
 module.exports = log;
 module.exports.one = "5";
 ```
+
+- https://medium.com/@vishwa.efor/javascript-module-exports-require-import-export-define-cc04461f4d5e
